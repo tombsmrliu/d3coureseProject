@@ -16,52 +16,108 @@
             padding-left: 20px;
             float:left;
         }
-
         .banner {
             width: 55px;
             height: 40px;
-            background-color: deepskyblue;
+            background-color: dodgerblue;
             font-family: "Microsoft YaHei UI";
             font-size: 15px;
             padding: 5px;
             color: white;
         }
+        a:link {
+            color: black;
+        }
+
+        /*百度logo部分样式*/
+
+        .logo {
+            width: 400px;
+            height: 300px;
+            margin-left: 40%;
+            padding-top: 50px;
+        }
+        .logo img{
+            width: 250px;
+            height: 150px;
+        }
+
+        /*百度搜索框部分样式*/
+        .search {
+            position: relative;
+            width: 700px;
+            height: 100px;
+            top: -100px;
+            left: 25%;
+        }
+
+        .search > form >input {
+            display: block;
+            width:500px;
+            height: 35px;
+            float: left;
+        }
+
+        .search > form >input:nth-last-child(1) {
+            display: block;
+            width: 100px;
+            height: 35px;
+            font-family: "Microsoft YaHei UI";
+            color: white;
+            border-width: 0;
+            background-color: dodgerblue;
+
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <ul>
-            <li>
-                <a href="">新闻</a>
-            </li>
-            <li>
-                <a href="">hao123</a>
-            </li>
-            <li>
-                <a href="">地图</a>
-            </li>
-            <li>
-                <a href="">视频</a>
-            </li>
-            <li>
-                <a href="">贴吧</a>
-            </li>
-            <li>
-                <a href="">学术</a>
-            </li>
-            <li>
-                <a href="">登录</a>
-            </li>
-            <li>
-                <a href="">设置</a>
-            </li>
-            <li>
-                <span class="banner">更多产品</span>
-            </li>
-        </ul>
+<div class="header">
+    <ul>
+        <li>
+            <a href="">新闻</a>
+        </li>
+        <li>
+            <a href="">hao123</a>
+        </li>
+        <li>
+            <a href="">地图</a>
+        </li>
+        <li>
+            <a href="">视频</a>
+        </li>
+        <li>
+            <a href="">贴吧</a>
+        </li>
+        <li>
+            <a href="">学术</a>
+        </li>
+        <li>
+            <a href="">登录</a>
+        </li>
+        <li>
+            <a href="">设置</a>
+        </li>
+        <li>
+            <span class="banner">更多产品</span>
+        </li>
+    </ul>
 
 
-    </div>
+</div>
+
+<div class="logo">
+    <img src="bd_logo1.png"/>
+</div>
+
+<div class="search">
+    <form >
+        <input type="search" name="search">
+        <input type="submit" name="submit" value="百度一下">
+    </form>
+</div>
+<div class="footer">
+
+</div>
 
 </body>
 </html>
