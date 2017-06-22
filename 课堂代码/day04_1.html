@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            float: left;
+
+        }
+
+    </style>
+</head>
+<body>
+
+   <div id="div1">
+
+   </div>
+
+   <div id="div2">
+
+   </div>
+
+   <script>
+       var element = document.getElementById("div1");
+       element.style.backgroundColor = "blue";
+       element.style.width = "300px";
+       element.style.height = "300px";
+       element.style.margin = "200px 0 0 200px";
+
+       var element2 = document.getElementById("div2");
+       element2.style.width = "300px";
+       element2.style.height = "300px";
+       element2.style.backgroundColor = "cyan";
+       element2.style.margin = "200px 0 0 20px";
+       var num = 0;
+       element2.onclick = function () {
+           num += 1;
+           element2.style.transform = "rotateZ("+num+"deg)";
+       };
+
+       var timer = setInterval(
+           function () {
+               num += 1;
+               element2.style.transform = "rotateZ("+num+"deg)";
+               element2.style.backgroundColor = getRodomColor();
+           }
+       ,100)
+
+       function getRodomColor() {
+           var r = parseInt(Math.random() * 256);
+           var b = parseInt(Math.random() * 256);
+           var g = parseInt(Math.random() * 256);
+
+           return "RBG("+r","+b+","+g+")";
+       }
+   </script>
+</body>
+</html>
