@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="functions.js"></script>
+
+    <style>
+         .div1 {
+             width: 200px;
+             height: 200px;
+             background-color: rgb(123,34,56);
+         }
+    </style>
+</head>
+<body>
+
+    <div class="div1">
+
+    </div>
+
+
+    <script>
+          var divElementArray = document.getElementsByClassName("div1");
+
+          //返回值是一个数组
+          var divFirst = divElementArray[0];//数组下标从零开始
+
+          var timer = setInterval(
+              function () {
+                  divFirst.style.backgroundColor = getRandomColor();
+              }
+          ,200);
+
+          //向html输出内容（添加内容）
+          //          divElementArray[1].innerHTML = "<div style = 'width: 100px ; height: 100px ; background-color : aqua'></div>"
+          //创建节点
+
+          var newDiv = document.createElement("div");
+          newDiv.style.width = "300px";
+          newDiv.style.height = "300px";
+          newDiv.style.backgroundColor = "blue";
+          newDiv.style.transform = "rotateZ(30deg)";
+          document.body.appendChild(newDiv);
+          //定时旋转
+          var per_deg = 0;
+            setInterval(
+                function () {
+                    per_deg += 10;
+                    newDiv.style.transform = "rotate(" + per_deg + "deg)";
+                }
+
+            ,300);
+    </script>
+</body>
+</html>
