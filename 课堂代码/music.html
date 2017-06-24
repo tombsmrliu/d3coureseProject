@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="functions.js"></script>
+</head>
+<body>
+
+     <script>
+           //1. div 高度随机改变 + 颜色随机改变
+           //2. divs 需要横向排列
+           //3. 布局的范围在浏览器内部
+
+         var per_width = 50; //每个div的宽度
+         var count = parseInt(window.innerWidth / per_width);
+
+         //通过循环创建div
+
+         for(var i = 0; i < count ; i++){
+             var newNode = document.createElement("div");
+             newNode.style.width = per_width + "px";
+             newNode.style.height = getRandomNumber(0,window.screen.height) + "px";
+             newNode.style.backgroundColor = getRandomColor();
+             newNode.style.display = "inline-block";
+             //添加到body中
+             document.body.appendChild(newNode);
+         }
+
+         setInterval(
+             function () {
+                 var divArray = document.getElementsByTagName("div");
+
+                 for (var i = 0 ; i < count ; i++){
+                     divArray[i].style.height = getRandomNumber(0,window.screen.height) + "px";
+                     divArray[i].style.backgroundColor = getRandomColor();
+                 }
+             }
+          ,200);
+
+     </script>
+
+</body>
+</html>

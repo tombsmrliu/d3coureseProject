@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="functions.js"></script>
+    <style type="text/css">
+        #d1 {
+            width: 150px;
+            height: 150px;
+            background-color: cyan;
+            border-radius: 75px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="d1">
+
+    </div>
+
+
+    <script>
+         var divElement = document.getElementById("d1");
+         var speed = 30 ;
+         var distance = 0 ;
+         var per_deg = 0 ;
+         setInterval(
+             function () {
+
+
+                 //控制小球的条件
+                 if (distance > 700)
+                 {
+                     speed = -speed ;
+                 }
+                 if (distance < 0 ){
+                     speed = -speed ;
+                 }
+
+
+                 distance += speed ;
+                 divElement.style.top = distance + "px";
+                 divElement.style.backgroundColor = getRandomColor();
+                 per_deg += 10;
+                 divElement.style.transform = "rotateY(" + per_deg +"deg)";
+             }
+         ,100);
+
+    </script>
+</body>
+</html>

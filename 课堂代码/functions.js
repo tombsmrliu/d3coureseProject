@@ -15,3 +15,8 @@ function getRandomColor() {
         //Math.random() -->[0,1) *255
 
 }
+
+
+function getRandomNumber(a,b) {
+     return parseInt(Math.random() *(b-a+1))
+}
