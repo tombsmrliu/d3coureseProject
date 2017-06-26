@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+          #d1 {
+              width: 400px;
+              height: 400px;
+              background-color: indianred;
+              position: relative;
+          }
+          #d2 {
+              width: 10px;
+              height: 10px;
+              background-color: cyan;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              cursor: nwse-resize;
+          }
+    </style>
+</head>
+<body>
+
+<div id="d1">
+    <div id="d2">
+
+    </div>
+</div>
+
+      <script>
+            var d1 = document.getElementById("d1");
+            var d2 = document.getElementById("d2");
+
+            d2.onmousedown = function () {
+                document.onmousemove = function (ev) {
+                    var myEvent = ev || event;
+                    d1.style.width  = event.x + "px";
+                    d1.style.height = event.y + "px";
+                }
+            }
+            d2.onmouseup = function () {
+                document.onmousemove = null ;
+            }
+
+      </script>
+
+</body>
+</html>
