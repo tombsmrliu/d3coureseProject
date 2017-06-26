@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="functions.js"></script>
+    <style>
+          .main {
+              width: 150px;
+              height: 150px;
+              background-color: cyan;
+              position: absolute;
+              left: 200px;
+              top: 200px;
+              border-radius: 75px;
+          }
+    </style>
+</head>
+<body>
+     <script>
+
+
+           for (var i = 0 ; i < 30 ; i++) {
+               var newNode = document.createElement("div");
+               newNode.className = "main";
+               newNode.style.backgroundColor = getRandomColor();
+               document.body.appendChild(newNode);
+           }
+
+           document.onmousemove = function () {
+               //获取div
+               var divArray = document.getElementsByTagName("div"); //30个
+
+               for (var i = divArray.length - 1; i > 0 ; i--){
+                   divArray[i].style.left = divArray[i-1].offsetLeft + "px";
+                   divArray[i].style.top = divArray[i-1].offsetTop + "px";
+               }
+               divArray[0].style.left = event.x + "px";
+               divArray[0].style.top  = event.y + "px";
+           };
+     </script>
+</body>
+</html>

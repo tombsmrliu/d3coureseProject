@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="functions.js"></script>
+</head>
+<body>
+
+    <script>
+          for(var i = 0 ; i < 30 ; i++ ){
+              var newDiv = document.createElement("div");
+              newDiv.style.width = "100px";
+              newDiv.style.height = "100px";
+              newDiv.style.backgroundColor = getRandomColor();
+              newDiv.style.position = "absolute";
+              newDiv.style.left = "200px";
+              newDiv.style.top = "300px";
+
+              document.body.appendChild(newDiv);
+          }
+
+    </script>
+</body>
+</html>
