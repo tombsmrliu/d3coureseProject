@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #container {
+            width: 500px;
+            height: 421px;
+            background-color: cyan;
+            margin: 0;
+        }
+
+        #mainUL {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <ul id="mainUL">
+        <!--li-->
+    </ul>
+</div>
+
+
+    <script>
+
+        function getRandomColor() {
+            var r = parseInt(Math.random() * 256);
+            var g = parseInt(Math.random() * 256);
+            var b = parseInt(Math.random() * 256);
+            return "rgb("+r+","+g+","+b+")";
+        }
+
+        var rowCount = 5, columnCount = 5 ; //undefined
+        var divElement = document.getElementById("container");
+        var ul = document.getElementById("mainUL");
+        var per_width = divElement.clientWidth / columnCount;
+        var per_height = divElement.clientHeight / rowCount;
+
+        for (var i = 0 ; i < rowCount * columnCount ; i++){
+            var newNode = document.createElement("li");
+            newNode.style.background = getRandomColor();
+            newNode.style.width = per_width + "px";
+            newNode.style.height = per_height + "px";
+            newNode.style.float = "left";
+
+            ul.appendChild(newNode);
+        }
+
+        var liArray = document.getElementsByTagName("li");
+
+        for (var i = 0 ; i < liArray.length ; i++){
+            var li = liArray[i];
+            li.style.background = "url(1.jpg)";
+            li.style.backgroundPositionX = i * -per_width + "px";
+            li.style.backgroundPositionY = parseInt(i / columnCount) * -per_height +"px";
+
+        }
+    </script>
+</body>
+</html>
