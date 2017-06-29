@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #leftDiv {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+
+        #bgImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        #mengDiv {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            position: absolute;
+            left: 0;
+            top:0;
+            opacity: .5;
+            display: none;
+        }
+
+        #rightDiv {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            position: absolute;
+            left: 405px;
+            top:0;
+            display: none;
+            overflow: hidden;
+        }
+
+        #rightImg {
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="leftDiv">
+        <img id="bgImg" src="2.jpg">
+        <div id="mengDiv">
+
+        </div>
+    </div>
+    
+    <div id="rightDiv">
+        <img id="rightImg" src="2.jpg">
+    </div>
+
+    <script>
+         var leftDiv = document.getElementById("leftDiv");
+         var rightDiv = document.getElementById("rightDiv");
+         var mengDiv = document.getElementById("mengDiv");
+         var rightImg = document.getElementById("rightImg");
+
+         leftDiv.onmouseover = function () {
+             mengDiv.style.display = "block";
+             rightDiv.style.display = "block";
+         };
+
+         leftDiv.onmouseout = function () {
+             mengDiv.style.display = "none";
+             rightDiv.style.display = "none";
+         };
+
+         leftDiv.onmousemove = function (ev) {
+             var myEvent = ev || event;
+             var newLeft = myEvent.clientX -(mengDiv.clientWidth / 2);
+             var newTop = myEvent.clientY - (mengDiv.clientHeight / 2);
+             newLeft > leftDiv.clientWidth - mengDiv.clientWidth ? newLeft = leftDiv.clientWidth - mengDiv.clientWidth:newLeft;
+             newTop > leftDiv.clientHeight - mengDiv.clientHeight ? newTop = leftDiv.clientHeight - mengDiv.clientHeight:newTop;
+             newLeft < 0 ? newLeft = 0 : newLeft;
+             newTop < 0 ? newTop = 0 : newTop ;
+             mengDiv.style.left = newLeft + "px";
+             mengDiv.style.top = newTop + "px";
+
+             //确定右侧大图显示哪块区域
+             var scale = leftDiv.clientWidth / mengDiv.clientWidth;
+             rightImg.style.left = -scale * newLeft + "px";
+             rightImg.style.top = -scale * newTop + "px";
+         };
+
+    </script>
+
+
+</body>
+</html>
