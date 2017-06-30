@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myIndex</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+      <div id="header">
+                  <div class="navbar">
+                          <ul>
+                              <li>主页</li>
+                              <li>基本信息</li>
+                          </ul>
+
+                  </div>
+
+                  <div id="logo">
+                       <img   src="logo.jpg">
+                  </div>
+
+
+                  <div class="navbar">
+                          <ul>
+                              <li>动态</li>
+                              <li>照片</li>
+                          </ul>
+
+                  </div>
+      </div>
+
+
+        <div id="body">
+
+            <div id="leftDiv">
+                <img id="bgImg" src="magnifier.gif">
+                <div id="mengDiv">
+
+                </div>
+            </div>
+
+            <div id="rightDiv">
+                <img id="rightImg" src="magnifier.gif">
+            </div>
+
+
+
+
+
+
+            <div id="pet">
+
+            </div>
+
+        </div>
+
+        <div id="footer">
+
+        </div>
+
+        <script>
+              var logoImg = document.getElementById("logo");
+              var bodyDiv = document.getElementById("header");
+              var timer = setInterval(function () {
+                    //获取滚动条顶部
+                    var scroTop = document.body.scrollTop;
+
+                    if (scroTop > 30){
+                        logoImg.style.top = "100px";
+                    }
+                    if (scroTop == 0 ){
+                        logoImg.style.top = 0;
+                    }
+              },200);
+
+
+        </script>
+        <script src="magnifier.js"></script>
+        <script src="pet.js"></script>
+</body>
+</html>

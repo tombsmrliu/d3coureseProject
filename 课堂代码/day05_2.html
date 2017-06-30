@@ -5,7 +5,7 @@
     <title>Title</title>
 
     <style>
-        #d1 {
+        #pet {
             width: 200px;
             height: 100px;
             background-color: cyan;
@@ -17,13 +17,13 @@
 </head>
 <body>
 
-      <div id="d1">
+      <div id="pet">
 
       </div>
 
       <script>
-          var divElement = document.getElementById("d1");
-
+          var divElement = document.getElementById("pet");
+          divElement.style.background = "url(pet.gif)";
 
           //添加鼠标按下事件
           divElement.onmousedown = function () {
